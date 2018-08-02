@@ -5,8 +5,8 @@
 // document.addEventListener('DOMContentLoaded', main)
 
 const deck = []
-const suitOfCards = ['spades', 'hearts', 'diamonds', 'clubs']
-const rankOfCards = ['ace', 'deuce', 'trey', 'four', 'five', 'six', 'seven', 'eight', 'nine', 'ten', 'jack', 'queen', 'king']
+const suitOfCards = ['Spades', 'Hearts', 'Diamonds', 'Clubs']
+const rankOfCards = ['Ace', 'Deuce', 'Trey', 'Four', 'Five', 'Six', 'Seven', 'Eight', 'Nine', 'Ten', 'Jack', 'Queen', 'King']
 
 for (let i = 0; i < suitOfCards.length; i++) {
   for (let j = 0; j < rankOfCards.length; j++) {
@@ -16,10 +16,10 @@ for (let i = 0; i < suitOfCards.length; i++) {
 
 const shuffleButtonClickEvent = () => {
   const card = deck.pop()
-
-  // Build a list item and append it to the list in the page.
-
+  const newLi = document.createElement('li')
+  newLi.textContent = card
+  document.querySelector('.dealt-cards').appendChild(newLi)
   console.log(card)
 }
-
+document.addEventListener('DOMContentLoaded')
 document.querySelector('#shuffle-button').addEventListener('click', shuffleButtonClickEvent)
