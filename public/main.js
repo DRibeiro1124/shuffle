@@ -21,5 +21,17 @@ const shuffleButtonClickEvent = () => {
   document.querySelector('.dealt-cards').appendChild(newLi)
   console.log(card)
 }
-document.addEventListener('DOMContentLoaded')
+
+let i = 0
+let j = 0
+let temp = null
+
+for (i = 0; i < deck.length; i++ ) {
+  j = Math.floor(Math.random() * (i + 1))
+  temp = deck[i]
+  deck[i] = deck[j]
+  deck[j] = temp
+  console.log(deck)
+}
+
 document.querySelector('#shuffle-button').addEventListener('click', shuffleButtonClickEvent)
